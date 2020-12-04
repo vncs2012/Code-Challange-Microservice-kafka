@@ -1,0 +1,16 @@
+{
+  "name": "producer",
+  "version": "1.0.0",
+  "main": "producer.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon producer.js"
+  },
+  "dependencies": {
+    "kafkajs": "^1.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "sucrase": "^3.16.0"
+  }
+}

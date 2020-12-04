@@ -1,0 +1,17 @@
+{
+  "name": "consumer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "vncs2012",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon consumer.js"
+  },
+  "dependencies": {
+    "kafkajs": "^1.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "sucrase": "^3.16.0"
+  }
+}
