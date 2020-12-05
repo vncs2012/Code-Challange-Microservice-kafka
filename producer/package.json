@@ -7,10 +7,16 @@
     "dev": "nodemon producer.js"
   },
   "dependencies": {
-    "kafkajs": "^1.15.0"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "kafkajs": "^1.15.0",
+    "mongoose": "^5.11.4"
   },
   "devDependencies": {
+    "@types/express": "^4.17.9",
+    "@types/mongoose": "^5.10.2",
     "nodemon": "^2.0.6",
-    "sucrase": "^3.16.0"
+    "sucrase": "^3.16.0",
+    "ts-node": "^9.1.0"
   }
 }

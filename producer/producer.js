@@ -1,29 +1,22 @@
-import { Kafka, logLevel } from 'kafkajs'
+import express, { Application } from "express";
+import bodyParser from 'body-parser'
+import connect from './db/connect'
+import { addUser, allUser } from './user/user.controller'
 
-const kafka = new Kafka({
-    clientId: 'producer',
-    brokers: ['localhost:9092'],
-    logLevel: logLevel.WARN
-})
+// Configure acesse db
+const db: string = "'mongodb://localhost/meat-api'"
 
-const producer = kafka.producer()
+connect(db);
 
-let user = [
-    {
-        name: 'Vinicius Carvalho Miranda',
-        email: 'vncs@gmail.com'
-    }
-]
-console.log(user)
-async function run() {
-    await producer.connect()
-    await producer.send({
-        topic: 'topic-email',
-        messages: [
-            { value: JSON.stringify(user) },
-        ],
-    })
-    await producer.disconnect()
-}
+const app: Application = express();
+const port: number = 5000 || process.env.PORT;
 
-run().catch(console.error)
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get("/user", allUser);
+app.post("/user", addUser);
+
+app.listen(port, () => {
+    console.log(`Server running on ${port}`);
+});
