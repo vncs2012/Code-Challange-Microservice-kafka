@@ -8,7 +8,8 @@
     "dev": "nodemon consumer.js"
   },
   "dependencies": {
-    "kafkajs": "^1.15.0"
+    "kafkajs": "^1.15.0",
+    "nodemailer": "^6.4.16"
   },
   "devDependencies": {
     "nodemon": "^2.0.6",

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { User } from './user.model'
-import { runKafka } from '../kafka/kafka.producer'
+import { runKafka } from '../kafka'
 
 export const allUser = (req: Request, res: Response) => {
     const user = User.find((err: any, user: any) => {
