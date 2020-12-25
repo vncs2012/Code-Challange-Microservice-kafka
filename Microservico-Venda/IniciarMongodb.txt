@@ -1,0 +1,1 @@
+ .\mongod.exe --dbpath='E:\git\Code Challange - Microservice - kafka\Microservico-Produtos\data'

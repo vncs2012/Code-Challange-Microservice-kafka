@@ -8,15 +8,15 @@ const kafka = new Kafka({
 })
 
 export async function runEnvio() {
-    const consumer = kafka.consumer({ groupId: 'group-email' })
+    const consumer = kafka.consumer({ groupId: 'confi2rmar-email' })
 
     await consumer.connect()
-    await consumer.subscribe({ topic: 'topic-email', fromBeginning: true })
+    await consumer.subscribe({ topic: 'confirmar-email', fromBeginning: true })
     await consumer.run({
         eachMessage: async ({ topic, partition, message }) => {
             const data = JSON.parse(message.value)
             console.log(data)
-            sendEmail(data)
+            // sendEmail(data)
         }
     })
 }
